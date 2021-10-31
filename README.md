@@ -1,3 +1,17 @@
+# For development:
+1. Clone project
+```shell
+$ git clone <url>
+```
+2. Install dependencies
+```shell
+$ npm install
+```
+3. Run development server
+```shell
+$ npm start
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
