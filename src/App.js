@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import Navbar from "./Navbar";
 import Students from "./Students";
+import SearchBar from "./SearchBar"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
         <div className="content">
             <Students />
+            <SearchBar />
         </div>
 
     </div>
