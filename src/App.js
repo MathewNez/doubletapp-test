@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import Navbar from "./Navbar";
 import Students from "./Students";
 import SearchBar from "./SearchBar"
+import SortList from "./SortList";
 
 function App() {
   return (
@@ -9,7 +10,10 @@ function App() {
       <Navbar />
         <div className="content">
             <Students />
-            <SearchBar />
+            <div className="container">
+                <SearchBar />
+                <SortList />
+            </div>
         </div>
 
     </div>
