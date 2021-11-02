@@ -4,8 +4,13 @@ import {useEffect, useState} from "react";
 
 const Table = () => {
 
+    const calculate_age = (dob) => {
+        let today = new Date();
+        let diff_ms = today.getFullYear() - dob.getFullYear();
+        return Math.abs(diff_ms);
+    }
+
     const [students, setStudents] = useState([]);
-    console.log(students);
 
     useEffect(() => {fetchData();}, []);
     const fetchData = async () => {
@@ -44,10 +49,11 @@ const Table = () => {
                             <td>{student.name}</td>
                             <td>{student.specialty}</td>
                             <td>{student.group}</td>
-                            <td>{student.birthday}</td>
+                            <td>{calculate_age(new Date(student.birthday))}</td>
                             <td>{student.rating}</td>
                             <td><span style={{backgroundColor: student.color, width: "30px", height: "30px", display: "inline-block", borderRadius: "50%"}}/></td>
-                            <td><DeleteButton /></td></tr>
+                            <td><DeleteButton /></td>
+                        </tr>
                     );
                 })}
             </tbody>
