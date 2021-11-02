@@ -1,6 +1,11 @@
 const SortList = () => {
+
+    const handleSelect = (e) => {
+        console.log("selected", e.target.value);
+    }
+
     return (
-            <select name="sortType" className="sortType">
+            <select name="sortType" className="sortType" onChange={handleSelect}>
                 <option value="alphabet">Имя А-Я</option>
                 <option value="alphabetReverse">Имя Я-А</option>
                 <option value="age">Сначала моложе</option>
