@@ -1,3 +1,6 @@
+import trashcan from "./trashcan.png"
+import DeleteButton from "./DeleteButton";
+
 const Table = () => {
     return(
         <table>
@@ -18,7 +21,7 @@ const Table = () => {
                     <td>Много</td>
                     <td>Ты мне мозги-то не еби, я спрашиваю: Сколько?</td>
                     <td>Цвет тут должен потом быть</td>
-                    <td>Тут будет кнопка "удалить"</td>
+                    <td><DeleteButton /></td>
             </tr>
                 <tr>
                     <td>Лупа</td>
@@ -27,7 +30,7 @@ const Table = () => {
                     <td>74</td>
                     <td>228</td>
                     <td>Цвет тут должен потом быть</td>
-                    <td>Тут будет кнопка "удалить"</td>
+                    <td><DeleteButton /></td>
                 </tr>
             </tbody>
         </table>
