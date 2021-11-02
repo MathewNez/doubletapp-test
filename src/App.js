@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import Navbar from "./Navbar";
 import Students from "./Students";
 import SearchBar from "./SearchBar"

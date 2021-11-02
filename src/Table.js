@@ -1,4 +1,3 @@
-import trashcan from "./trashcan.png"
 import DeleteButton from "./DeleteButton";
 
 const Table = () => {
