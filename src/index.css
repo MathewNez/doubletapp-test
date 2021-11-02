@@ -31,6 +31,10 @@
   
 }
 
+code {
+  color: #49C2E8;
+}
+
 .content {
   height: 100%;
   margin: 40px auto;
@@ -128,13 +132,15 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 32px;
+  text-align: left;
+  border-spacing: 25px;
 }
 
 th, td {
   padding: 20px;
 }
 
-thead {
+th {
   font-family: Geometria, serif;
   font-style: normal;
   font-weight: normal;
@@ -143,7 +149,6 @@ thead {
 }
 
 tbody {
-  padding: 12px;
   /* White */
   background: #FFFFFF;
 
