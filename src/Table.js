@@ -1,7 +1,19 @@
 import DeleteButton from "./DeleteButton";
 import logo from "./logo.svg"
+import {useEffect, useState} from "react";
 
 const Table = () => {
+
+    const [students, setStudents] = useState([]);
+    console.log(students);
+
+    useEffect(() => {fetchData();}, []);
+    const fetchData = async () => {
+        const response = await fetch("https://front-assignment-api.2tapp.cc/api/persons");
+        const parsed = await response.json();
+        setStudents(parsed.students);
+    }
+
     return(
         <table>
             <colgroup>
@@ -25,26 +37,19 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><img src={logo} alt={logo}/></td>
-                    <td>Пупа</td>
-                    <td>Крыса с моаиса</td>
-                    <td>МО-1337</td>
-                    <td>Много</td>
-                    <td>322</td>
-                    <td>цвт</td>
-                    <td><DeleteButton /></td>
-                </tr>
-                <tr>
-                    <td><img src={logo} alt={logo}/></td>
-                    <td>Лупа</td>
-                    <td>фиит (сосёт)</td>
-                    <td>ФТ-Артемий Рогоффффф</td>
-                    <td>74</td>
-                    <td>228</td>
-                    <td>Цвт</td>
-                    <td><DeleteButton /></td>
-                </tr>
+                {students.map((student) => {
+                    return(
+                        <tr key={student.id}>
+                            <td><img src={student.avatar} alt={logo} className="avatar"/></td>
+                            <td>{student.name}</td>
+                            <td>{student.specialty}</td>
+                            <td>{student.group}</td>
+                            <td>{student.birthday}</td>
+                            <td>{student.rating}</td>
+                            <td><span style={{backgroundColor: student.color, width: "30px", height: "30px", display: "inline-block", borderRadius: "50%"}}/></td>
+                            <td><DeleteButton /></td></tr>
+                    );
+                })}
             </tbody>
         </table>
     );
