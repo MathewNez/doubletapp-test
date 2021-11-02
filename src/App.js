@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Students from "./Students";
 import SearchBar from "./SearchBar"
 import SortList from "./SortList";
+import Table from "./Table";
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
                 <SearchBar />
                 <SortList />
             </div>
+            <Table />
         </div>
-
     </div>
   );
 }
