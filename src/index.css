@@ -97,6 +97,7 @@
   appearance:none;
   padding: 15px;
   display: flex;
+  min-width: 180px;
 
   /* White */
   background: #FFFFFF url("./drop-downList.png") no-repeat right;
