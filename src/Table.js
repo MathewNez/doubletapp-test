@@ -2,36 +2,7 @@ import {useEffect, useState} from "react";
 import StudentsList from "./StudentsList";
 import Loader from "./Loader";
 
-const Table = () => {
-
-    const [students, setStudents] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-
-
-    // useEffect( () => {
-    //     fetch("https://front-assignment-api.2tapp.cc/api/persons")
-    //         .then(result => result.json())
-    //         .then((parsed) => {
-    //             setStudents(parsed.students);
-    //             setIsLoading(false);
-    //         });
-    // }, []);
-
-    useEffect( () => {
-        setTimeout(() => {
-        fetch("https://front-assignment-api.2tapp.cc/api/persons")
-            .then(result => result.json())
-            .then((parsed) => {
-                setStudents(parsed.students);
-                setIsLoading(false);
-            });
-    }, 1000)}, []);
-
-
-    const handleDelete = (id) => {
-        const newStudents = students.filter((student) => student.id !== id);
-        setStudents(newStudents);
-    }
+const Table = ({students, handleDelete, isLoading}) => {
 
     return (
         <div>
