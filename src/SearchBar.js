@@ -1,10 +1,10 @@
 import searchIcon from "./searchIcon.png"
 
-const SearchBar = () => {
+const SearchBar = ({handleSearch}) => {
     return(
       <div className="searchBar">
           <img src={ searchIcon } alt={ searchIcon }/>
-          <input type="text" placeholder="Поиск по имени"/>
+          <input onChange={event => handleSearch(event)} type="text" placeholder="Поиск по имени"/>
       </div>
     );
 }

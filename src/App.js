@@ -9,8 +9,8 @@ function App() {
 
 
     const [students, setStudents] = useState([]);
+    const [filteredData,setFilteredData] = useState(students);
     const [isLoading, setIsLoading] = useState(true);
-
 
     // useEffect( () => {
     //     fetch("https://front-assignment-api.2tapp.cc/api/persons")
@@ -27,6 +27,7 @@ function App() {
                 .then(result => result.json())
                 .then((parsed) => {
                     setStudents(parsed.students);
+                    setFilteredData(parsed.students);
                     setIsLoading(false);
                 });
         }, 1000)}, []);
@@ -35,6 +36,16 @@ function App() {
     const handleDelete = (id) => {
         const newStudents = students.filter((student) => student.id !== id);
         setStudents(newStudents);
+        setFilteredData(newStudents);
+    }
+
+    const handleSearch = (event) => {
+        let value = event.target.value.toLowerCase();
+        let result;
+        result = students.filter((student) => {
+            return student.name.toLowerCase().search(value) !== -1;
+        });
+        setFilteredData(result);
     }
 
   return (
@@ -43,10 +54,10 @@ function App() {
         <div className="content">
             <Students />
             <div className="container">
-                <SearchBar />
+                <SearchBar handleSearch={handleSearch} />
                 <SortList />
             </div>
-            <Table students={students} handleDelete={handleDelete} isLoading={isLoading}/>
+            <Table students={filteredData} handleDelete={handleDelete} isLoading={isLoading}/>
         </div>
     </div>
   );
