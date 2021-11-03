@@ -20,6 +20,7 @@ This section is in progress
 
 # Current bugs:
 * if you search for special students and then delete him, it starts displaying all student who left, not the search results
+* Looks like it may be fixed with the state manager, such as mobx, what a surprise!
 
 # Plans:
 * Replace drop-down list with something else in order to apply custom styles
