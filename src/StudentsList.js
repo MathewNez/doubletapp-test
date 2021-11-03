@@ -1,8 +1,7 @@
 import logo from "./logo.svg";
-import DeleteButton from "./DeleteButton";
+import trashcan from "./trashcan.png";
 
-const StudentsList = (props) => {
-    const students = props.students;
+const StudentsList = ({students, handleDelete}) => {
 
     const calculate_age = (dob) => {
         let today = new Date();
@@ -21,7 +20,7 @@ const StudentsList = (props) => {
                         <td>{calculate_age(new Date(student.birthday))}</td>
                         <td>{student.rating}</td>
                         <td><span style={{backgroundColor: student.color, width: "30px", height: "30px", display: "inline-block", borderRadius: "50%"}}/></td>
-                        <td><DeleteButton /></td>
+                        <td><button className="delete" onClick={() => handleDelete(student.id)}><img src={trashcan} alt={trashcan}/></button></td>
                     </tr>
                 );
         })

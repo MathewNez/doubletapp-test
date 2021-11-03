@@ -12,6 +12,11 @@ const Table = () => {
         setStudents(parsed.students);
     }
 
+    const handleDelete = (id) => {
+        const newStudents = students.filter((student) => student.id !== id);
+        setStudents(newStudents);
+    }
+
     return(
         <table>
             <colgroup>
@@ -35,7 +40,7 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-               <StudentsList students={students} />
+               <StudentsList students={students} handleDelete={handleDelete} />
             </tbody>
         </table>
     );
