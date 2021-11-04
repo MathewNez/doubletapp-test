@@ -6,6 +6,7 @@ const SortList = ({handleSort}) => {
 
     const DropDownContainer = styled("div")``;
     const DropDownHeader = styled("div")`
+      cursor: pointer;
       position: relative;
       display: flex;
       width: 180px;
@@ -37,6 +38,7 @@ const SortList = ({handleSort}) => {
       width: 180px;
     `;
     const ListItem = styled("li")`
+      cursor: pointer;
       list-style: none;
       font-family: Geometria, serif;
       font-style: normal;
