@@ -47,6 +47,9 @@ function App() {
         });
         setFilteredData(result);
     }
+    const handleSort = (type) => {
+      console.log(type);
+    }
 
   return (
     <div className="App">
@@ -55,7 +58,7 @@ function App() {
             <Students />
             <div className="container">
                 <SearchBar handleSearch={handleSearch} />
-                <SortList />
+                <SortList handleSort={handleSort}/>
             </div>
             <Table students={filteredData} handleDelete={handleDelete} isLoading={isLoading}/>
         </div>
