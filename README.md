@@ -23,9 +23,8 @@ This section is in progress
 * Looks like it may be fixed with the state manager, such as mobx, what a surprise!
 
 # Plans:
-* Replace drop-down list with something else in order to apply custom styles
+* Recreate (at least) dropdown using styled components
 * Make sorting actually work
 * Add links to a navbar (just because)
-* Look for mobx and find out how it can be used here
-* Same for the TypeScript
-* Same for the styled components
+* Put list of students into mobx
+* Look how the TypeScript can be applied to this project
