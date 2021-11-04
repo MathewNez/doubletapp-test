@@ -1,4 +1,3 @@
-import {useEffect, useState} from "react";
 import StudentsList from "./StudentsList";
 import Loader from "./Loader";
 
