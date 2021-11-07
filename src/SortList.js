@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {useState} from "react";
 import ddIcon from "./drop-downList.png";
 
-const SortList = ({handleSort}) => {
+const SortList = ({filters, setFilters}) => {
 
     const DropDownContainer = styled("div")``;
     const DropDownHeader = styled("div")`
@@ -69,7 +69,10 @@ const SortList = ({handleSort}) => {
     const onOptionClicked = value => () => {
         setSelectedOption(value);
         setIsOpen(false);
-        handleSort(value);
+        setFilters({
+            ...filters,
+            sort: value,
+        });
     };
 
     return (
