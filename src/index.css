@@ -30,6 +30,11 @@ code {
   color: #49C2E8;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .content {
   height: 100%;
   margin: 40px auto;
