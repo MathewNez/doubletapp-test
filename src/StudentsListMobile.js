@@ -2,6 +2,12 @@ import trashcan from "./trashcan.png";
 import star from "./star.png"
 
 const StudentsListMobile = ({students, handleDelete, calculateAge}) => {
+    const plural = (age) => {
+        let titles = ['год', 'года', 'лет'];
+        let cases = [2, 0, 1, 1, 1, 2];
+        return titles[ (age%100>4 && age%100<20)? 2 : cases[(age%10<5)?age%10:5] ];
+    }
+
     return(
         students.map(student => {
             return(
@@ -24,7 +30,7 @@ const StudentsListMobile = ({students, handleDelete, calculateAge}) => {
                     <hr/>
                     <div className="bottom-part">
                         <ul>
-                            <li>{calculateAge(new Date(student.birthday))}</li>
+                            <li>{calculateAge(new Date(student.birthday)) + ' ' +plural(calculateAge(new Date(student.birthday)))}</li>
                             <li>{student.specialty}</li>
                             <li>{student.group}</li>
                         </ul>
