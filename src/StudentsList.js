@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import trashcan from "./trashcan.png";
 
 const StudentsList = ({students, handleDelete, calculateAge}) => {
@@ -9,7 +8,7 @@ const StudentsList = ({students, handleDelete, calculateAge}) => {
         students.map((student) => {
                 return(
                     <tr key={student.id}>
-                        <td><img src={student.avatar} alt={logo} className="avatar"/></td>
+                        <td><img src={student.avatar} alt={student.avatar} className="avatar"/></td>
                         <td>{student.name}</td>
                         <td>{student.specialty}</td>
                         <td>{student.group}</td>

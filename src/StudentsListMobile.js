@@ -13,7 +13,7 @@ const StudentsListMobile = ({students, handleDelete, calculateAge}) => {
             return(
                 <div className="student-card">
                     <div className="top-part row">
-                        <img src={student.avatar} className="avatar-mobile"/>
+                        <img src={student.avatar} className="avatar-mobile" alt={student.avatar}/>
                         <div className="info">
                             <p>{student.name}</p>
                             <div className="row general-info">
