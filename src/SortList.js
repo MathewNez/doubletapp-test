@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {useState} from "react";
 import ddIcon from "./drop-downList.png";
+import tick from "./tick.png";
 
 const SortList = ({filters, setFilters}) => {
 
@@ -58,6 +59,13 @@ const SortList = ({filters, setFilters}) => {
       right: 0;
       padding-right: 15px;
     `;
+    const Tick = styled("img")`
+      width: 10px;
+      height: 7px;
+      position: absolute;
+      right: 0;
+      padding-right: 15px;
+    `;
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -88,6 +96,7 @@ const SortList = ({filters, setFilters}) => {
                             return (
                                 <ListItem onClick={onOptionClicked(option)} key={index} option={option} selected={selectedOption}>
                                     {option}
+                                    {option === selectedOption && <Tick src={tick} /> }
                                 </ListItem>);
                         })}
                     </DropDownList>
