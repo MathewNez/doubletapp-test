@@ -21,5 +21,4 @@ This section is in progress...
 # Current bugs:
 * when you search and delete student, it displays all the left students for a second and then displays search result. Not critical, but not good either.
 # Plans:
-* Add links to a navbar (just because)
 * Make interface for mobiles
