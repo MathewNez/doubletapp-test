@@ -7,6 +7,7 @@ import SortList from "./SortList";
 import Table from "./Table";
 import {useEffect, useState} from "react";
 import SortListMobile from "./SortListMobile";
+import LoaderMobile from "./LoaderMobile";
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
                     setFilteredData(parsed.students);
                     setIsLoading(false);
                 });
-        }, 1000)}, []);
+        }, 10000)}, []);
 
     const compareFn = (a, b, sign) => {
         if (a > b)
@@ -105,6 +106,7 @@ function App() {
                 <SearchBar filters={filters} setFilters={setFilters} />
                 {window.mobileCheck() ? <SortListMobile filters={filters} setFilters={setFilters}/> : <SortList filters={filters} setFilters={setFilters}/>}
             </div>
+            {(window.mobileCheck() && isLoading) && <LoaderMobile />}
             { window.mobileCheck() ?
                 <StudentsListMobile
                     students={filteredData}

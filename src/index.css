@@ -213,6 +213,11 @@ tbody {
   margin-top: 20px;
 }
 
+.loader-mobile {
+  margin: 10px;
+  text-align: center;
+}
+
 .loading {
   font-family: Geometria, serif;
   font-style: normal;
@@ -250,7 +255,7 @@ tbody {
   background: #FFFFFF;
 
   /* 1 */
-  box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
   border-radius: 6px;
   margin-bottom: 10px;
   padding: 16px;
@@ -284,9 +289,9 @@ hr {
 }
 
 .bottom-part ul li::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #49C2E8; /* Change the color */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  content: "\2022";
+  color: #49C2E8;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
