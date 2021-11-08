@@ -1,7 +1,7 @@
 import StudentsList from "./StudentsList";
 import Loader from "./Loader";
 
-const Table = ({students, handleDelete, isLoading}) => {
+const Table = ({students, handleDelete, isLoading, calculateAge}) => {
 
     return (
         <div>
@@ -29,7 +29,7 @@ const Table = ({students, handleDelete, isLoading}) => {
                 </thead>
                 {isLoading && <Loader />}
                 <tbody>
-                <StudentsList students={students} handleDelete={handleDelete}/>
+                <StudentsList students={students} handleDelete={handleDelete} calculateAge={calculateAge}/>
                 </tbody>
             </table>
             }

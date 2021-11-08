@@ -36,9 +36,18 @@ function App() {
                 });
         }, 1000)}, []);
 
-    const compareFn = (a, b) => {
+    const compareFn = (a, b, sign) => {
+        if (a > b)
+            return -1 * sign;
+        if (a < b)
+            return 1 * sign;
+        return 0;
+    }
 
-
+    const calculateAge = (dob) => {
+        let today = new Date();
+        let diff_ms = today.getFullYear() - dob.getFullYear();
+        return Math.abs(diff_ms);
     }
 
     useEffect(() => {
@@ -47,14 +56,29 @@ function App() {
         });
 
         switch (filters.sort) {
+            case 'Имя А-Я':
+                filteredStudents.sort((student1, student2) => compareFn(student1.name, student2.name, -1));
+                break;
+            case 'Имя Я-А':
+                filteredStudents.sort((student1, student2) => compareFn(student1.name, student2.name, 1));
+                break;
+            case 'Сначала моложе':
+                filteredStudents.sort((student1, student2) => compareFn(calculateAge(new Date(student1.birthday)), calculateAge(new Date(student2.birthday)), -1));
+                break;
+            case 'Сначала старше':
+                filteredStudents.sort((student1, student2) => compareFn(calculateAge(new Date(student1.birthday)), calculateAge(new Date(student2.birthday)), 1));
+                break;
             case 'Высокий рейтинг':
-                filteredStudents.sort((student1, student2) => student1.rating > student2.rating ? -1 : student1.rating < student2.rating ? 1 : 0);
+                filteredStudents.sort((student1, student2) => compareFn(student1.rating, student2.rating, 1));
+                break;
+            case 'Низкий рейтинг':
+                filteredStudents.sort((student1, student2) => compareFn(student1.rating, student2.rating, -1));
                 break;
             default:
                 break;
         }
         setFilteredData(filteredStudents);
-    }, [filters])
+    }, [students, filters])
 
 
     const handleDelete = (id) => {
@@ -62,18 +86,6 @@ function App() {
         setStudents(newStudents);
         setFilteredData(newStudents);
     }
-
-    // const handleSearch = (event) => {
-    //     let value = event.target.value.toLowerCase();
-    //     let result;
-    //     result = students.filter((student) => {
-    //         return student.name.toLowerCase().search(value) !== -1;
-    //     });
-    //     setFilteredData(result);
-    // }
-    // const handleSort = (type) => {
-    //   console.log(type);
-    // }
 
   return (
     <div className="App">
@@ -84,7 +96,7 @@ function App() {
                 <SearchBar filters={filters} setFilters={setFilters} />
                 <SortList filters={filters} setFilters={setFilters}/>
             </div>
-            <Table students={filteredData} handleDelete={handleDelete} isLoading={isLoading}/>
+            <Table students={filteredData} handleDelete={handleDelete} isLoading={isLoading} calculateAge={calculateAge}/>
         </div>
     </div>
   );
