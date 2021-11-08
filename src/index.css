@@ -35,11 +35,38 @@ a {
   color: inherit;
 }
 
+.navbar-mobile {
+  padding: 20px 20px 20px 30px;
+  display: flex;
+  margin: 0 auto;
+
+  background: #FFFFFF;
+
+  box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
+}
+
+.navbar-mobile h1 {
+  /* 20 / M */
+  padding-left: 25px;
+  font-family: Geometria, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 44px;
+  /* Black */
+  color: #000000;
+}
+
 .content {
   height: 100%;
   margin: 40px auto;
   padding: 20px 130px;
 
+}
+
+.content-mobile {
+  margin-top: 10px;
+  padding: 10px 20px;
 }
 
 .students h2{
@@ -99,13 +126,23 @@ a {
   column-gap: 20px;
   justify-content: space-between;
   margin-top: 50px;
+  margin-bottom: 32px;
+}
+
+.container-mobile {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  justify-content: space-between;
+  margin-top: 22px;
+  margin-bottom: 10px;
 }
 
 table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  margin-top: 32px;
   text-align: left;
 }
 
@@ -140,7 +177,25 @@ tbody {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 }
 
+.delete-mobile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: 0;
+}
+
 .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.avatar-mobile {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -167,4 +222,71 @@ tbody {
   /* Black */
   color: #000000;
 
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.star {
+  width: 10px;
+  height: 10px;
+  padding-right: 10px;
+  padding-left: 13px;
+}
+
+.rating {
+  font-family: Geometria, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.student-card {
+  /* White */
+  background: #FFFFFF;
+
+  /* 1 */
+  box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 16px;
+}
+
+.top-part {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.general-info {
+  margin-top: 3px;
+}
+
+.info {
+  padding-left: 20px;
+}
+
+.bottom-part {
+  padding: 15px 5px 0 39px;
+}
+
+hr {
+  margin: 0 -16px;
+  opacity: 0.05;
+  size: 1px;
+}
+
+.bottom-part ul {
+  list-style: none;
+}
+
+.bottom-part ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #49C2E8; /* Change the color */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
