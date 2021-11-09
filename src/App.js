@@ -20,25 +20,26 @@ function App() {
         sort: '',
     });
 
-    // useEffect( () => {
-    //     fetch("https://front-assignment-api.2tapp.cc/api/persons")
-    //         .then(result => result.json())
-    //         .then((parsed) => {
-    //             setStudents(parsed.students);
-    //             setIsLoading(false);
-    //         });
-    // }, []);
-
     useEffect( () => {
-        setTimeout(() => {
-            fetch("https://front-assignment-api.2tapp.cc/api/persons")
-                .then(result => result.json())
-                .then((parsed) => {
-                    setStudents(parsed.students);
-                    setFilteredData(parsed.students);
-                    setIsLoading(false);
-                });
-        }, 10000)}, []);
+        fetch("https://front-assignment-api.2tapp.cc/api/persons")
+            .then(result => result.json())
+                    .then((parsed) => {
+                        setStudents(parsed.students);
+                        setFilteredData(parsed.students);
+                        setIsLoading(false);
+            });
+    }, []);
+
+    // useEffect( () => {
+    //     setTimeout(() => {
+    //         fetch("https://front-assignment-api.2tapp.cc/api/persons")
+    //             .then(result => result.json())
+    //             .then((parsed) => {
+    //                 setStudents(parsed.students);
+    //                 setFilteredData(parsed.students);
+    //                 setIsLoading(false);
+    //             });
+    //     }, 10000)}, []);
 
     const compareFn = (a, b, sign) => {
         if (a > b)
