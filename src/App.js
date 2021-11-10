@@ -8,6 +8,7 @@ function App() {
     const [students, setStudents] = useState([]);
     const [filteredData,setFilteredData] = useState(students);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [filters, setFilters] = useState( {
         query: '',
         sort: '',
@@ -20,6 +21,10 @@ function App() {
                         setStudents(parsed.students);
                         setFilteredData(parsed.students);
                         setIsLoading(false);
+            })
+            .catch(err => {
+                setError(err.message);
+                setIsLoading(false);
             });
     }, []);
 
@@ -101,6 +106,7 @@ function App() {
                 filters={filters}
                 setFilters={setFilters}
                 isLoading={isLoading}
+                error={error}
                 handleDelete={handleDelete}
                 calculateAge={calculateAge}
             />

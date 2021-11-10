@@ -1,7 +1,9 @@
-const LoaderMobile = () => {
+const LoaderMobile = ({errMsg}) => {
     return(
         <div className="loader-mobile">
-            <div className="loading">Загружаем данные, пожалуйста, подождите...</div>
+            <div className="loading">
+                {errMsg ? errMsg : "Загружаем данные, пожалуйста, подождите..."}
+            </div>
         </div>
 
     );

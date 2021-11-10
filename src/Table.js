@@ -1,7 +1,7 @@
 import StudentsList from "./StudentsList";
 import Loader from "./Loader";
 
-const Table = ({students, handleDelete, isLoading, calculateAge}) => {
+const Table = ({students, handleDelete, isLoading, calculateAge, error}) => {
 
     return (
         <div>
@@ -27,7 +27,7 @@ const Table = ({students, handleDelete, isLoading, calculateAge}) => {
                     <th>Рейтинг</th>
                 </tr>
                 </thead>
-                {isLoading && <Loader />}
+                {(isLoading || error) && <Loader errMsg={error}/>}
                 <tbody>
                 <StudentsList students={students} handleDelete={handleDelete} calculateAge={calculateAge}/>
                 </tbody>

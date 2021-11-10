@@ -15,7 +15,7 @@ const MobileLayout = (props) => {
                     <SearchBar filters={props.filters} setFilters={props.setFilters}/>
                     <SortListMobile filters={props.filters} setFilters={props.setFilters}/>
                 </div>
-                {props.isLoading && <LoaderMobile/>}
+                {(props.isLoading || props.error) && <LoaderMobile errMsg={props.error}/>}
                     <StudentsListMobile
                         students={props.filteredData}
                         handleDelete={props.handleDelete}

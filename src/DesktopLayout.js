@@ -18,6 +18,7 @@ const DesktopLayout = (props) => {
                         students={props.filteredData}
                         handleDelete={props.handleDelete}
                         isLoading={props.isLoading}
+                        error={props.error}
                         calculateAge={props.calculateAge}
                     />
             </div>
