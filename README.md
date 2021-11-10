@@ -40,6 +40,6 @@ Congrats! You may find site at [127.0.0.1:3000](http://127.0.0.1:3000)
 # Current bugs:
 * when you search and delete student, it displays all the left students for a millisecond and then displays search result. Not critical, but not good either.
 # Plans:
+* Organize files by folders
 * Add fetching errors handling
-* Refactor code: make separate components for mobile and desktop layout
 * Refactor other things
