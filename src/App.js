@@ -1,13 +1,6 @@
-import Navbar from "./Navbar";
-import NavbarMobile from "./NavbarMobile";
-import Students from "./Students";
-import StudentsListMobile from "./StudentsListMobile";
-import SearchBar from "./SearchBar"
-import SortList from "./SortList";
-import Table from "./Table";
 import {useEffect, useState} from "react";
-import SortListMobile from "./SortListMobile";
-import LoaderMobile from "./LoaderMobile";
+import DesktopLayout from "./DesktopLayout";
+import MobileLayout from "./MobileLayout";
 
 function App() {
 
@@ -30,6 +23,7 @@ function App() {
             });
     }, []);
 
+    // comment the function above and uncomment function below to add a delay in loading data (only for development purposes)
     // useEffect( () => {
     //     setTimeout(() => {
     //         fetch("https://front-assignment-api.2tapp.cc/api/persons")
@@ -101,30 +95,25 @@ function App() {
 
   return (
     <div className="App">
-        {window.mobileCheck() ? <NavbarMobile /> : <Navbar />}
-        <div className={window.mobileCheck() ? "content-mobile" : "content"}>
-            <Students />
-            <div className={window.mobileCheck() ? "container-mobile" : "container"}>
-                <SearchBar filters={filters} setFilters={setFilters} />
-                {window.mobileCheck() ? <SortListMobile filters={filters} setFilters={setFilters}/> : <SortList filters={filters} setFilters={setFilters}/>}
-            </div>
-            {(window.mobileCheck() && isLoading) && <LoaderMobile />}
-            { window.mobileCheck() ?
-                <StudentsListMobile
-                    students={filteredData}
-                    handleDelete={handleDelete}
-                    isLoading={isLoading}
-                    calculateAge={calculateAge}
-                />
-                :
-                <Table
-                    students={filteredData}
-                    handleDelete={handleDelete}
-                    isLoading={isLoading}
-                    calculateAge={calculateAge}
-                />
-            }
-        </div>
+        {window.mobileCheck() ?
+            <MobileLayout
+                filteredData={filteredData}
+                filters={filters}
+                setFilters={setFilters}
+                isLoading={isLoading}
+                handleDelete={handleDelete}
+                calculateAge={calculateAge}
+            />
+            :
+            <DesktopLayout
+                filteredData={filteredData}
+                filters={filters}
+                setFilters={setFilters}
+                isLoading={isLoading}
+                handleDelete={handleDelete}
+                calculateAge={calculateAge}
+            />
+        }
     </div>
   );
 }
