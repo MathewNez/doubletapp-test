@@ -27,11 +27,11 @@ $ npm install
 ```shell
 $ npm run build
 ```
-3. Install `serve`
+3. Install `serve` globally
 ```shell
 $ sudo npm install -g serve
 ```
-4. run production buils using `serve`
+4. run production build using `serve`
 ```shell
 $ serve -s build
 ```
@@ -40,6 +40,4 @@ Congrats! You may find site at [127.0.0.1:3000](http://127.0.0.1:3000)
 # Current bugs:
 * when you search and delete student, it displays all the left students for a millisecond and then displays search result. Not critical, but not good either.
 # Plans:
-* Organize files by folders
-* Add fetching errors handling
-* Refactor other things
+* Refactor code
