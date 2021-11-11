@@ -70,7 +70,7 @@ function App() {
 
     useEffect(() => {
         let filteredStudents = students.filter((student) => {
-            return student.name.toLowerCase().search(filters.query) !== -1;
+            return student.name.toLowerCase().search(filters.query.toLowerCase()) !== -1;
         });
 
         switch (filters.sort) {
