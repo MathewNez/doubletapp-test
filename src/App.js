@@ -14,13 +14,18 @@ function App() {
         sort: '',
     });
 
-    useEffect( () => {
+    useEffect(() => {
         fetch("https://front-assignment-api.2tapp.cc/api/persons")
-            .then(result => result.json())
-                    .then((parsed) => {
-                        setStudents(parsed.students);
-                        setFilteredData(parsed.students);
-                        setIsLoading(false);
+            .then(result => {
+                if (!result.ok)
+                    throw Error('Server-side fetching error');
+                return result.json()
+            })
+            .then((parsed) => {
+                setStudents(parsed.students);
+                setFilteredData(parsed.students);
+                setIsLoading(false);
+                setError(null);
             })
             .catch(err => {
                 setError(err.message);
@@ -116,6 +121,7 @@ function App() {
                 filters={filters}
                 setFilters={setFilters}
                 isLoading={isLoading}
+                error={error}
                 handleDelete={handleDelete}
                 calculateAge={calculateAge}
             />
