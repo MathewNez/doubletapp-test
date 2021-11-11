@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import DesktopLayout from "./DesktopLayout";
-import MobileLayout from "./MobileLayout";
+import DesktopLayout from "./components/DesktopLayout";
+import MobileLayout from "./components/MobileLayout";
 
 function App() {
 

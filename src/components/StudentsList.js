@@ -1,4 +1,4 @@
-import trashcan from "./trashcan.png";
+import trashcan from "../images/trashcan.png";
 
 const StudentsList = ({students, handleDelete, calculateAge}) => {
 

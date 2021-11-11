@@ -1,5 +1,5 @@
-import trashcan from "./trashcan.png";
-import star from "./star.png"
+import trashcan from "../images/trashcan.png";
+import star from "../images/star.png"
 
 const StudentsListMobile = ({students, handleDelete, calculateAge}) => {
     const plural = (age) => {

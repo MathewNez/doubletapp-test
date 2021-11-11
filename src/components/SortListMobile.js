@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {useState} from "react";
-import ddIcon from "./drop-downList.png";
-import tick from "./tick.png";
+import ddIcon from "../images/drop-downList.png";
+import tick from "../images/tick.png";
 
 const SortListMobile = ({filters, setFilters}) => {
 

@@ -1,4 +1,4 @@
-import searchIcon from "./searchIcon.png"
+import searchIcon from "../images/searchIcon.png"
 
 
 
