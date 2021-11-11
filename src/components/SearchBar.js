@@ -1,7 +1,6 @@
 import searchIcon from "../images/searchIcon.png"
 
 
-
 const SearchBar = ({filters, setFilters}) => {
 
     const handleSearch = (query) => {
@@ -11,11 +10,11 @@ const SearchBar = ({filters, setFilters}) => {
         });
     }
 
-    return(
-      <div className="searchBar">
-          <img src={ searchIcon } alt={ searchIcon }/>
-          <input onChange={event => handleSearch(event.target.value)} type="text" placeholder="Поиск по имени"/>
-      </div>
+    return (
+        <div className="searchBar">
+            <img src={searchIcon} alt={searchIcon}/>
+            <input onChange={event => handleSearch(event.target.value)} type="text" placeholder="Поиск по имени"/>
+        </div>
     );
 }
 

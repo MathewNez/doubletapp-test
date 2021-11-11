@@ -36,7 +36,7 @@ const SortListMobile = ({filters, setFilters}) => {
       box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
       border-radius: 6px;
       width: 180px;
-      
+
       margin-left: -148px;
     `;
     const ListItem = styled("li")`
@@ -92,9 +92,10 @@ const SortListMobile = ({filters, setFilters}) => {
                     <DropDownList>
                         {sortOptions.map((option, index) => {
                             return (
-                                <ListItem onClick={onOptionClicked(option)} key={index} option={option} selected={selectedOption}>
+                                <ListItem onClick={onOptionClicked(option)} key={index} option={option}
+                                          selected={selectedOption}>
                                     {option}
-                                    {option === selectedOption && <Tick src={tick} /> }
+                                    {option === selectedOption && <Tick src={tick}/>}
                                 </ListItem>);
                         })}
                     </DropDownList>

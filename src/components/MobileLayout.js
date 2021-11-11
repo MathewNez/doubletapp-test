@@ -6,7 +6,7 @@ import LoaderMobile from "./LoaderMobile";
 import StudentsListMobile from "./StudentsListMobile";
 
 const MobileLayout = (props) => {
-    return(
+    return (
         <div>
             <NavbarMobile/>
             <div className="content-mobile">
@@ -16,12 +16,12 @@ const MobileLayout = (props) => {
                     <SortListMobile filters={props.filters} setFilters={props.setFilters}/>
                 </div>
                 {(props.isLoading || props.error) && <LoaderMobile errMsg={props.error}/>}
-                    <StudentsListMobile
-                        students={props.filteredData}
-                        handleDelete={props.handleDelete}
-                        isLoading={props.isLoading}
-                        calculateAge={props.calculateAge}
-                    />
+                <StudentsListMobile
+                    students={props.filteredData}
+                    handleDelete={props.handleDelete}
+                    isLoading={props.isLoading}
+                    calculateAge={props.calculateAge}
+                />
             </div>
         </div>
     );
